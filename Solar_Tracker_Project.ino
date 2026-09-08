@@ -36,17 +36,17 @@ void loop() {
   int dtime = 10;
   int tol = 30;
 
-  // Average light readings
+// Average light readings
   int avt = (lt + rt) / 2; // Top
   int avd = (ld + rd) / 2; // Bottom
   int avl = (lt + ld) / 2; // Left
   int avr = (rt + rd) / 2; // Right
 
-  // Difference between sides
+// Difference between sides
   int dvert = avt - avd;
   int dhoriz = avl - avr;
 
-  // VERTICAL MOVEMENT
+  // Vertical Movement
   if (abs(dvert) > tol) {
 
     if (avt > avd) {
@@ -67,7 +67,7 @@ void loop() {
     vertical.write(servovert);
   }
 
-  // HORIZONTAL MOVEMENT
+  // Horizontal Movement
   if (abs(dhoriz) > tol) {
 
     if (avl > avr) {
